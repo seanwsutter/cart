@@ -1,6 +1,6 @@
 /*! notes, '.' for class, '#' for id */
 
-* {   /*! all */
+* {   /*! page */
   margin: 0; /* m0 tab */
   padding: 0; /* p0 tab */
   box-sizing: border-box;
@@ -19,7 +19,7 @@ body {    /*! font */
 }
 .cart {   /*! navbar shopping cart icon */
   background-color: white;
-  position: relative; /* position */
+  position: relative; 
   color: #212529;
   padding: 5px;
   font-size: 30px;
@@ -27,7 +27,7 @@ body {    /*! font */
 }
 .cartAmmount {    /*! navbar cart ammount text */
   font-size: 16px;
-  position: absolute; /* position */
+  position: absolute; 
   top: -15px;
   right: -10px;
   background-color: darkred;
@@ -38,7 +38,7 @@ body {    /*! font */
 .shop {   /*! shop */
   display: grid;
   grid-template-columns: repeat(4, 223px); /* gtc tab, (4 columns, 233 pixels) */
-  gap: 75px;
+  gap: 50px;
   justify-content: center; /* jcc tab, */
 }
 @media (max-width: 1000px) {    /*! media query 1000px */
