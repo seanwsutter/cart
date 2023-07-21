@@ -3,7 +3,7 @@ let shop = document.getElementById('shop');
 // variable,  selects shop div id
 
 //! shop items
-let shopItemsData = [   // variable = array[] with objects{}, ex [{},{},{},{}] 
+let shopItemsData = [   // variable = array[] storing objects{}, ex [{},{},{},{}] 
   {   // objects {id, name, price, desc, img}
     id: "yeet",   // unique id
     name: "Casual Shirt",
@@ -70,20 +70,73 @@ let generateShop = () => {
   .join("")); // .join("") removes comma text from array wat?
 }; 
 /* wiki .join, "-Adds all the elements of an array into a string, separated by the specified separator string. */
-
 generateShop(); // call/invoke/summon/run/diaper function
 
-//! increment function & search functon, if else 
+//! increment function
 // increment goal - onClick the (add icon will select unique id of selected item */
 let increment = (id) => { 
   let selectedItem = id;
   // searching the specific item you selected to see if it actually exists
   let search = basket.find((x) => x.id === selectedItem.id); 
-    // searching the specific item you selected to see if it actually exists
-
   // .find to see if object actually exists or not. using (x) for argument 
   // if else statement goal - if search is undefined (item not found in basket) then it will push to basket
-  if (search === undefined) { 
+  if (search === undefined) {  
+    basket.push({ // .push selectedItem into basket
+      id: selectedItem.id,
+      item: 1,  
+    }); 
+    } else {   // if we do find item in basket
+      search.item += 1; // adds more of same item
+  } 
+  // console.log(basket); // log after search/push
+  // run update function with unique selectedItem id attatched from generateShop
+    update(selectedItem.id);
+  };
+
+//! decrement function
+let decrement = (id) => { 
+  let selectedItem = id;
+  let search = basket.find((x) => x.id === selectedItem.id); 
+  
+  if (search.item === 0) // changed search.item, and undefined to 0, prevents item quantity going negative
+    return; // return;, stops process
+    // removed .push 
+    else {   
+      search.item -= 1; // changed + to -
+  } 
+  // console.log(basket); // log after search/push
+  // run update function with unique selectedItem id from generateShop
+  update(selectedItem.id); 
+
+};
+
+//! update quantity function
+// goal - run update function every time we click on plus/minus to update basket quantity, display in HTML
+/* example,
+  let update = () => {
+    console.log("update function is running")
+  }; */
+let update = (id) => {
+  // search function - if and then the unique id exists it will run the update function
+  let search = basket.find((x) => x.id === id);
+  console.log(search.item); // will only log item quantity 
+  // goal - display item quanity in HTML 
+  document.getElementById(id).innerHTML = search.item;
+
+  // console.log(id);
+
+};
+
+
+
+/* comments
+
+let selectedItem = id;
+  // searching the specific item you selected to see if it actually exists
+  let search = basket.find((x) => x.id === selectedItem.id); 
+  // .find to see if object actually exists or not. using (x) for argument 
+  // if else statement goal - if search is undefined (item not found in basket) then it will push to basket
+  if (search === undefined) {  
     basket.push({ // push into basket
       id: selectedItem.id,
       item: 1,  
@@ -93,26 +146,6 @@ let increment = (id) => {
   } 
   // type log after search/push
   console.log(basket); 
-};
-
-
-
-//! decrement function
-let decrement = (id) => { 
-  let selectedItem = id;
-  console.log(selectedItem.id); 
-  // console.log("Removed");
-};
-
-
-//! update quantity function
-let update = () => {
-
-};
-
-
-
-/* comments
 
 double quotes "", are for strings, {} are for objects
 
@@ -124,11 +157,12 @@ let ()=>{}; ES6 arrow function
 make array to automate content
   let shopItemsData = [{},{},{},{}]
 
-map function
+.map function
   ${x.object} 
 
-instead of writing ${x.object} use 'deconstruct' method, 
-let {objects} = x;, let {id, name, price, desc, img} = x;  
+instead of writing every ${x.object} use 'deconstruct' method, 
+let {objects} = x;, 
+let {id, name, price, desc, img} = x;  
 
 shopItemsData.price
 
