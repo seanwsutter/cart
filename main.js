@@ -35,20 +35,19 @@ let shopItemsData = [   // variable = array[] storing objects{}, ex [{},{},{},{}
 ]; 
 
 //! basket basket babababa basket
-/* basket above push function 
-example,
-let basket = [{
-  id: "dhjaek",
-  item: 1
-}]; 
-*/
-let basket = [];
+// basket above push function 
+// removed, let basket = [];
+// retrieving key "data", || 'R' statement?, if we have local data it will retrieve it, if we dont it will be an empty array
+let basket = JSON.parse(localStorage.getItem("data")) || [] 
 
 //! shop 
 let generateShop = () => { 
   return (shop.innerHTML = shopItemsData.map((x) => { // .map will run every object(4) ONE time(x)
-      let { id, name, price, desc, img } = x; 
-      // deconstruct method, ${x} to avoid manually changing (x.id),(x.name)
+    // deconstruct method, ${x} to avoid manually changing (x.id),(x.name)
+    let { id, name, price, desc, img } = x; 
+    // problem - refreshing page keeps data but will reset HTML display 
+    // search specefic id and item quantity, if id already exists, display item quantity in HTML
+    let search = basket.find((x) => x.id === id) || [] // if we find something, if we dont - return empty array
       return `
       <div id=product-id-${id} class="item">    
         <img width="220" src=${img} alt=""> 
@@ -59,7 +58,9 @@ let generateShop = () => {
             <h2> $${price} </h2>
             <div class="buttons"> 
               <i onclick="decrement(${id})" class="bi bi-dash-lg"></i> 
-              <div id=${id} class="quantity">0</div> 
+              <div id=${id} class="quantity">
+              ${search.item === undefined ? 0 : search.item}
+              </div> 
               <i onclick="increment(${id})" class="bi bi-plus-lg"></i> 
             </div>
           </div>
@@ -89,6 +90,8 @@ let increment = (id) => {
       search.item += 1; // adds more of same item
   } 
   // console.log(basket); // log after search/push
+  // localStorage.setItem will place data in storange 
+  localStorage.setItem("data", JSON.stringify(basket)); // 'data' is a 'key', JSON.stringify for ALL the data/objects in basket
   // run update function with unique selectedItem id attatched from generateShop
     update(selectedItem.id);
   };
@@ -98,13 +101,13 @@ let decrement = (id) => {
   let selectedItem = id;
   let search = basket.find((x) => x.id === selectedItem.id); 
   
-  if (search.item === 0) // changed search.item, and undefined to 0, prevents item quantity going negative
-    return; // return;, stops process
-    // removed .push 
-    else {   
-      search.item -= 1; // changed + to -
-  } 
+  if (search === undefined) return; // prevents console error on decrement if basket is empty
+  else if (search.item === 0) return; // changed search.item, and undefined to 0, prevents item quantity going negative
+  else {   
+    search.item -= 1; // changed + to -
+  }; 
   // console.log(basket); // log after search/push
+  localStorage.setItem("data", JSON.stringify(basket)); // will place data in storange
   // run update function with unique selectedItem id from generateShop
   update(selectedItem.id); 
 
@@ -119,13 +122,39 @@ let decrement = (id) => {
 let update = (id) => {
   // search function - if and then the unique id exists it will run the update function
   let search = basket.find((x) => x.id === id);
-  console.log(search.item); // will only log item quantity 
+  // console.log(search.item); // will only log item quantity 
   // goal - display item quanity in HTML 
-  document.getElementById(id).innerHTML = search.item;
-
+  document.getElementById(id).innerHTML = search.item; 
+  calculation();
   // console.log(id);
-
 };
+
+//! calculation cart function
+// goal - run function when update function is triggered
+let calculation = () => {
+  let cartIcon = document.getElementById("cartAmmount"); // 'selecting icon id here'
+  // argument x, x.item targets all item objects,
+  // .reduce to add all the numbers in array. Using argument x,y (next,previous) number in array [3,4,3,6] (total 16), 
+  // 0 is default number where we want to start the calculation
+  cartIcon.innerHTML = basket.map((x) => x.item).reduce((x,y) => x + y, 0) // pasted, displays item quantity by cartIcon
+  // cut, console.log(basket.map((x) => x.item).reduce((x,y)=>x+y,0)); 
+};
+
+calculation(); // run for local storage cart icon item quanity
+
+
+//! local storage
+// goal - avoid resetting basket/cart when refreshing
+/*   
+  let search = basket.find((x) => x.id === id);
+  localStorage.setItem("data", JSON.stringify(basket));
+  let search = basket.find((x) => x.id === id);
+  let search = basket.find((x) => x.id === id) || []
+  ${search.item === undefined ? 0 : search.item}
+
+    
+
+
 
 
 

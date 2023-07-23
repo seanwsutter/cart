@@ -8,6 +8,11 @@
 body {    /*! font */
   font-family: sans-serif; 
 }
+
+i{ /*! target all icon HTML elements */
+  cursor: pointer;
+
+}
 .navbar {   /*! navbar */
   display: flex;
   flex-direction: row;
@@ -30,7 +35,7 @@ body {    /*! font */
   position: absolute; 
   top: -15px;
   right: -10px;
-  background-color: darkred;
+  background-color: red;
   color: white;
   padding: 3px;
   border-radius: 3px;
