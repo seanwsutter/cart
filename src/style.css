@@ -11,8 +11,14 @@ body {    /*! font */
 
 i{ /*! target all icon HTML elements */
   cursor: pointer;
-
 }
+  
+a{
+  text-decoration: none;  
+  color: white;
+}
+
+
 .navbar {   /*! navbar */
   display: flex;
   flex-direction: row;

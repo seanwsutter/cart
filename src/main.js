@@ -1,6 +1,7 @@
 //! ids from html 
 let shop = document.getElementById('shop');
 
+/* cut and moved to data.js
 //! shop items
 let shopItemsData = [   // variable = array[] storing objects{}, ex [{},{},{},{}] 
   {   // objects {id, name, price, desc, img}
@@ -32,10 +33,11 @@ let shopItemsData = [   // variable = array[] storing objects{}, ex [{},{},{},{}
     img: "images/img-4.jpg",
   }
 ]; 
+*/
 
 //! basket basket babababa basket
 // basket above push function 
-let basket = JSON.parse(localStorage.getItem("data")) || [] 
+let basket = JSON.parse(localStorage.getItem("data")) || [];
 // getItem, retrieving the KEY, "data"
 // || 'R' statement, if we have local data it will get it it, if we dont the basket will be an empty array
 
@@ -67,7 +69,6 @@ let basket = JSON.parse(localStorage.getItem("data")) || []
   })
   .join("")); // .join("") removes comma text from array wat?
 }; 
-// wiki .join, "-Adds all the elements of an array into a string, separated by the specified separator string. */
 generateShop(); // call/invoke/summon/run/diaper function
 
 //! increment function

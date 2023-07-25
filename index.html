@@ -11,11 +11,15 @@
 <body>
   
   <div class="navbar">  <!--! .navbar -->
-    <h2>Clothing Store</h2>
-    <div class="cart"> <!--.cart -->
+    <a href="index.html"> <!--a tab, anchor tag,  leads back to index.html homepage-->
+      <h2>Clothing Store</h2> <!-- moved into <a></a>-->
+    </a> 
+    <a href="cart.html"> <!-- leads to cart html page-->
+      <div class="cart"> <!--.cart -->
         <i class="bi bi-cart2"></i>
         <div id="cartAmmount" class="cartAmmount">0</div> <!-- make into id for js -->
-    </div>
+      </div>
+    </a> 
   </div>
  
   <div class="shop" id="shop">  <!--! .shop#shop, target class for css & id for js -->
@@ -85,7 +89,8 @@
     </div>  
   
   </div>
-<!--! hello stranger -->
 </body>
+<!--added data.js-->
+<script src="src/data.js"></script>
 <script src="src/main.js"></script>
 </html>
