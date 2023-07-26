@@ -93,7 +93,6 @@ a {
 }
 
 
-<<<<<<< HEAD:src/style.css
 /**
 ! style rules for label and some buttons 
 **/
@@ -103,12 +102,3 @@ a {
   text-align: center;
   margin-bottom: 20px;
 }*/
-=======
-/*! style rules for label and some buttons */
-
-
-.text-center {
-  text-align: center;
-  margin-bottom: 20px;
-}
->>>>>>> 56eb9151f8e518a27439961567a5662657613f58:style.css
