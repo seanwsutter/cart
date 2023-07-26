@@ -8,6 +8,17 @@
 body {    /*! font */
   font-family: sans-serif; 
 }
+
+i { /*! target all icon HTML elements */
+  cursor: pointer;
+}
+  
+a {
+  text-decoration: none;  
+  color: white;
+}
+
+
 .navbar {   /*! navbar */
   display: flex;
   flex-direction: row;
@@ -30,7 +41,7 @@ body {    /*! font */
   position: absolute; 
   top: -15px;
   right: -10px;
-  background-color: darkred;
+  background-color: red;
   color: white;
   padding: 3px;
   border-radius: 3px;
@@ -73,9 +84,31 @@ body {    /*! font */
   gap: 8px;
   font-size: 16px;
 }
+
 .bi-dash-lg {   /*! minus */
   color: red;
 }
 .bi-plus-lg {   /*! plus */
   color: green;
 }
+
+
+<<<<<<< HEAD:src/style.css
+/**
+! style rules for label and some buttons 
+**/
+
+
+/*.text-center {
+  text-align: center;
+  margin-bottom: 20px;
+}*/
+=======
+/*! style rules for label and some buttons */
+
+
+.text-center {
+  text-align: center;
+  margin-bottom: 20px;
+}
+>>>>>>> 56eb9151f8e518a27439961567a5662657613f58:style.css
