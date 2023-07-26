@@ -1,5 +1,4 @@
-//! shop items
-let shopItemsData = [   // variable = array[] storing objects{}, ex [{},{},{},{}] 
+let shopItemsData = [    // variable = array[] storing objects{}, ex [{},{},{},{}] 
   {   // objects {id, name, price, desc, img}
     id: "yeet",   // unique id
     name: "Casual Shirt",

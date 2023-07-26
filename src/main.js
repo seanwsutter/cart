@@ -1,8 +1,7 @@
-//! ids from html 
+//! ids from html !
 let shop = document.getElementById('shop');
 
 /* cut and moved to data.js
-//! shop items
 let shopItemsData = [   // variable = array[] storing objects{}, ex [{},{},{},{}] 
   {   // objects {id, name, price, desc, img}
     id: "yeet",   // unique id

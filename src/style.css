@@ -9,11 +9,11 @@ body {    /*! font */
   font-family: sans-serif; 
 }
 
-i{ /*! target all icon HTML elements */
+i { /*! target all icon HTML elements */
   cursor: pointer;
 }
   
-a{
+a {
   text-decoration: none;  
   color: white;
 }
@@ -89,4 +89,13 @@ a{
 }
 .bi-plus-lg {   /*! plus */
   color: green;
+}
+
+
+/*! style rules for label and some buttons */
+
+
+.text-center {
+  text-align: center;
+  margin-bottom: 20px;
 }

@@ -1,5 +1,5 @@
-let label = document.getElementById("label");
-let ShoppingCart = document.getElementById("shopping-cart");
+let label = document.getElementById('label');
+let ShoppingCart = document.getElementById('shopping-cart');
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 //! calculation cart function
@@ -14,17 +14,15 @@ let calculation = () => {
 calculation(); // run for local storage cart icon item quanity
 
 let generateCartItems = () => {
-  if (basket.lengh !== 0) {
-  }
-  else {
-    ShoppingCart.innerHTML = ``;
+  if (basket.length !== 0) {
+  } else {
+    ShoppingCart.innerHTML = ` `;
     label.innerHTML = `
     <h2>Cart is Empty</h2>
-    <a href="index.html">
-      <button class="HomeBtn">Back to home</button>
-    </a>
+      <a href="index.html">
+      <button class="HomeBtn"> Back to home</button>
+      </a>
     `;
-
   }
 };
 
