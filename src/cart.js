@@ -1,5 +1,6 @@
 let label = document.getElementById('label');
 let ShoppingCart = document.getElementById('shopping-cart');
+
 let basket = JSON.parse(localStorage.getItem("data")) || [];
 
 //! calculation cart function
@@ -19,10 +20,10 @@ let generateCartItems = () => {
     ShoppingCart.innerHTML = ``;
     label.innerHTML = `
     <h2>Cart is Empty</h2>
-    <a href="index.html">
-      <button class="HomeBtn">Back to home</button>
-    </a>
-    `;
+      <a href="index.html">
+        <button class="HomeBtn"> Back to home</button>
+      </a>
+    `
   }
 };
 
