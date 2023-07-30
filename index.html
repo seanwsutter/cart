@@ -1,95 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Clothing Store</title>
   <link rel="stylesheet" href="src/style.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-</head>
-<!-- links icons.getbootstrap.com CDN, coolor.com, -->
-<body>
-  
-  <div class="navbar">  <!--! .navbar -->
-    <a href="index.html"> <!--a tab, anchor tag,  leads back to index.html homepage-->
-      <h2>Clothing Store</h2> <!-- moved into <a></a>-->
-    </a> 
-    <a href="cart.html"> <!-- leads to cart html page-->
-      <div class="cart"> <!--.cart -->
-        <i class="bi bi-cart2"></i>
-        <div id="cartAmmount" class="cartAmmount">0</div> <!-- make into id for js -->
-      </div>
-    </a> 
-  </div>
- 
-  <div class="shop" id="shop">  <!--! .shop#shop, target class for css & id for js -->
-    
-    <div class="item">    <!--! item 1 -->
-      <img width="220" src="images/img-1.jpg" alt=""> <!--img, option + esc for img-->
-      <div class="details">  <!-- .details, title descpription price & buttons -->
-        <h3>Casual Shirt</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        <div class="price-quantity"> <!-- .price-quantity, -->
-          <h2>$45</h2>
-          <div class="buttons"> <!-- .buttons, -->
-            <i class="bi bi-dash-lg"></i> <!-- minus icon -->
-             <div class="quantity">0</div> <!-- .quantity, -->
-            <i class="bi bi-plus-lg"></i> <!-- plus icon -->
-          </div>
-        </div>
-      </div> 
-    </div>
+  <!-- links icons.getbootstrap.com CDN,-->
+</head> 
 
-    <div class="item">    <!--! item 2 -->
-      <img width="220" src="images/img-2.jpg" alt=""> <!--img, option + esc for imgs -->
-      <div class="details">  <!-- .details, title descpription price & buttons -->
-        <h3>Office Shirt</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        <div class="price-quantity"> <!-- .price-quantity, -->
-          <h2>$30</h2>
-          <div class="buttons"> <!-- .buttons, -->
-            <i class="bi bi-dash-lg"></i> <!-- minus -->
-             <div class="quantity">0</div> <!-- .quantity, -->
-            <i class="bi bi-plus-lg"></i> <!-- plus -->
-          </div>
-        </div>
-      </div> 
-    </div>
-  
-    <div class="item">    <!--! item 3 -->
-      <img width="220" src="images/img-1.jpg" alt=""> <!--img, option + esc for imgs -->
-      <div class="details">  <!-- .details, title descpription price & buttons -->
-        <h3>Casual Shirt</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        <div class="price-quantity"> <!-- .price-quantity, -->
-          <h2>$45</h2>
-          <div class="buttons"> <!-- .buttons, -->
-            <i class="bi bi-dash-lg"></i> <!-- minus -->
-             <div class="quantity">0</div> <!-- .quantity, -->
-            <i class="bi bi-plus-lg"></i> <!-- plus -->
-          </div>
-        </div>
-      </div> 
-    </div>
-    
-    <div class="item">    <!--! item 4 -->
-      <img width="220" src="images/img-1.jpg" alt=""> <!--img, option + esc for options -->
-      <div class="details">  <!-- .details, title descpription price & buttons -->
-        <h3>Casual Shirt</h3>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit.</p>
-        <div class="price-quantity"> <!-- .price-quantity, -->
-          <h2>$45</h2>
-          <div class="buttons"> <!-- .buttons, -->
-            <i class="bi bi-dash-lg"></i> <!-- minus -->
-             <div class="quantity">0</div> <!-- .quantity, -->
-            <i class="bi bi-plus-lg"></i> <!-- plus -->
-          </div>
-        </div>
-      </div> 
-    </div>  
-  
+<body>
+  <div class="navbar"> <!-- .navbar -->
+    <a href="index.html"> 
+      <h2>Clothing Store</h2>
+    </a>
+    <a href="cart.html">
+      <div class="cart">
+        <i class="bi bi-cart2"></i>
+        <div id="cartAmount" class="cartAmount">0</div> <!-- make into id for js -->
+      </div>
+    </a>
   </div>
+  
+  <div class="shop" id="shop"></div> <!-- .shop#shop, target class for css & id for js -->
 </body>
-<script src="src/Data.js"></script> 
+
+<script src="src/Data.js"></script>
 <script src="src/main.js"></script>
 </html>

@@ -1,4 +1,4 @@
-let shopItemsData = [    // variable = array[] storing objects{}, ex [{},{},{},{}] 
+let shopItemsData = [    
   {   // objects {id, name, price, desc, img}
     id: "yeet",   // unique id
     name: "Casual Shirt",
