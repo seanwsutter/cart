@@ -27,4 +27,4 @@ let shopItemsData = [
     desc: "Lorem ipsum dolor sit amet consectetur, adipisicing elit.",
     img: "images/img-4.jpg",
   }
-]; 
+];  
